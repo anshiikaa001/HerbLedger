@@ -1,0 +1,117 @@
+﻿{
+    "version":  "1.0.0",
+    "name":  "herbledger-network",
+    "organizations":  {
+                          "Regulators":  {
+                                             "peers":  [
+                                                           "peer0.regulators.herbledger.com"
+                                                       ],
+                                             "certificateAuthorities":  [
+                                                                            "ca.regulators.herbledger.com"
+                                                                        ],
+                                             "mspid":  "RegulatorsMSP"
+                                         },
+                          "Labs":  {
+                                       "peers":  [
+                                                     "peer0.labs.herbledger.com"
+                                                 ],
+                                       "certificateAuthorities":  [
+                                                                      "ca.labs.herbledger.com"
+                                                                  ],
+                                       "mspid":  "LabsMSP"
+                                   },
+                          "Processors":  {
+                                             "peers":  [
+                                                           "peer0.processors.herbledger.com"
+                                                       ],
+                                             "certificateAuthorities":  [
+                                                                            "ca.processors.herbledger.com"
+                                                                        ],
+                                             "mspid":  "ProcessorsMSP"
+                                         },
+                          "Farmers":  {
+                                          "peers":  [
+                                                        "peer0.farmers.herbledger.com"
+                                                    ],
+                                          "certificateAuthorities":  [
+                                                                         "ca.farmers.herbledger.com"
+                                                                     ],
+                                          "mspid":  "FarmersMSP"
+                                      }
+                      },
+    "client":  {
+                   "connection":  {
+                                      "timeout":  {
+                                                      "orderer":  "300",
+                                                      "peer":  {
+                                                                   "endorser":  "300"
+                                                               }
+                                                  }
+                                  },
+                   "organization":  "Farmers"
+               },
+    "peers":  {
+                  "peer0.processors.herbledger.com":  {
+                                                          "grpcOptions":  {
+                                                                              "ssl-target-name-override":  "peer0.processors.herbledger.com"
+                                                                          },
+                                                          "url":  "grpcs://localhost:9051"
+                                                      },
+                  "peer0.labs.herbledger.com":  {
+                                                    "grpcOptions":  {
+                                                                        "ssl-target-name-override":  "peer0.labs.herbledger.com"
+                                                                    },
+                                                    "url":  "grpcs://localhost:11051"
+                                                },
+                  "peer0.farmers.herbledger.com":  {
+                                                       "grpcOptions":  {
+                                                                           "ssl-target-name-override":  "peer0.farmers.herbledger.com"
+                                                                       },
+                                                       "url":  "grpcs://localhost:7051"
+                                                   },
+                  "peer0.regulators.herbledger.com":  {
+                                                          "grpcOptions":  {
+                                                                              "ssl-target-name-override":  "peer0.regulators.herbledger.com"
+                                                                          },
+                                                          "url":  "grpcs://localhost:13051"
+                                                      }
+              },
+    "certificateAuthorities":  {
+                                   "ca.processors.herbledger.com":  {
+                                                                        "httpOptions":  {
+                                                                                            "verify":  false
+                                                                                        },
+                                                                        "url":  "https://localhost:8054",
+                                                                        "caName":  "ca-processors"
+                                                                    },
+                                   "ca.farmers.herbledger.com":  {
+                                                                     "httpOptions":  {
+                                                                                         "verify":  false
+                                                                                     },
+                                                                     "url":  "https://localhost:7054",
+                                                                     "caName":  "ca-farmers"
+                                                                 },
+                                   "ca.labs.herbledger.com":  {
+                                                                  "httpOptions":  {
+                                                                                      "verify":  false
+                                                                                  },
+                                                                  "url":  "https://localhost:9054",
+                                                                  "caName":  "ca-labs"
+                                                              },
+                                   "ca.regulators.herbledger.com":  {
+                                                                        "httpOptions":  {
+                                                                                            "verify":  false
+                                                                                        },
+                                                                        "url":  "https://localhost:10054",
+                                                                        "caName":  "ca-regulators"
+                                                                    }
+                               },
+    "orderers":  {
+                     "orderer.herbledger.com":  {
+                                                    "grpcOptions":  {
+                                                                        "ssl-target-name-override":  "orderer.herbledger.com"
+                                                                    },
+                                                    "url":  "grpcs://localhost:7050"
+                                                }
+                 }
+}

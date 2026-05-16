@@ -1,0 +1,52 @@
+﻿{
+    "version":  "1.0.0",
+    "name":  "farmers-herbledger-network",
+    "organizations":  {
+                          "Farmers":  {
+                                          "peers":  [
+                                                        "peer0.farmers.herbledger.com"
+                                                    ],
+                                          "certificateAuthorities":  [
+                                                                         "ca.farmers.herbledger.com"
+                                                                     ],
+                                          "mspid":  "FarmersMSP"
+                                      }
+                      },
+    "client":  {
+                   "connection":  {
+                                      "timeout":  {
+                                                      "peer":  {
+                                                                   "endorser":  "300"
+                                                               }
+                                                  }
+                                  },
+                   "organization":  "Farmers"
+               },
+    "peers":  {
+                  "peer0.farmers.herbledger.com":  {
+                                                       "grpcOptions":  {
+                                                                           "ssl-target-name-override":  "peer0.farmers.herbledger.com",
+                                                                           "hostnameOverride":  "peer0.farmers.herbledger.com"
+                                                                       },
+                                                       "url":  "grpcs://localhost:7051"
+                                                   }
+              },
+    "certificateAuthorities":  {
+                                   "ca.farmers.herbledger.com":  {
+                                                                     "httpOptions":  {
+                                                                                         "verify":  false
+                                                                                     },
+                                                                     "url":  "https://localhost:7054",
+                                                                     "caName":  "ca-farmers"
+                                                                 }
+                               },
+    "orderers":  {
+                     "orderer.herbledger.com":  {
+                                                    "grpcOptions":  {
+                                                                        "ssl-target-name-override":  "orderer.herbledger.com",
+                                                                        "hostnameOverride":  "orderer.herbledger.com"
+                                                                    },
+                                                    "url":  "grpcs://localhost:7050"
+                                                }
+                 }
+}

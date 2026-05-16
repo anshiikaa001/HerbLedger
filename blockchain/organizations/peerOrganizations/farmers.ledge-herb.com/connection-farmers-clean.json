@@ -1,0 +1,101 @@
+{
+  "name": "herbledger-network",
+  "version": "1.0.0",
+  "client": {
+    "organization": "Farmers",
+    "connection": {
+      "timeout": {
+        "peer": {
+          "endorser": "300"
+        },
+        "orderer": "300"
+      }
+    }
+  },
+  "organizations": {
+    "Farmers": {
+      "mspid": "FarmersMSP",
+      "peers": ["peer0.farmers.herbledger.com"],
+      "certificateAuthorities": ["ca.farmers.herbledger.com"]
+    },
+    "Processors": {
+      "mspid": "ProcessorsMSP",
+      "peers": ["peer0.processors.herbledger.com"],
+      "certificateAuthorities": ["ca.processors.herbledger.com"]
+    },
+    "Labs": {
+      "mspid": "LabsMSP",
+      "peers": ["peer0.labs.herbledger.com"],
+      "certificateAuthorities": ["ca.labs.herbledger.com"]
+    },
+    "Regulators": {
+      "mspid": "RegulatorsMSP",
+      "peers": ["peer0.regulators.herbledger.com"],
+      "certificateAuthorities": ["ca.regulators.herbledger.com"]
+    }
+  },
+  "orderers": {
+    "orderer.herbledger.com": {
+      "url": "grpcs://localhost:7050",
+      "grpcOptions": {
+        "ssl-target-name-override": "orderer.herbledger.com"
+      }
+    }
+  },
+  "peers": {
+    "peer0.farmers.herbledger.com": {
+      "url": "grpcs://localhost:7051",
+      "grpcOptions": {
+        "ssl-target-name-override": "peer0.farmers.herbledger.com"
+      }
+    },
+    "peer0.processors.herbledger.com": {
+      "url": "grpcs://localhost:9051",
+      "grpcOptions": {
+        "ssl-target-name-override": "peer0.processors.herbledger.com"
+      }
+    },
+    "peer0.labs.herbledger.com": {
+      "url": "grpcs://localhost:11051",
+      "grpcOptions": {
+        "ssl-target-name-override": "peer0.labs.herbledger.com"
+      }
+    },
+    "peer0.regulators.herbledger.com": {
+      "url": "grpcs://localhost:13051",
+      "grpcOptions": {
+        "ssl-target-name-override": "peer0.regulators.herbledger.com"
+      }
+    }
+  },
+  "certificateAuthorities": {
+    "ca.farmers.herbledger.com": {
+      "url": "https://localhost:7054",
+      "caName": "ca-farmers",
+      "httpOptions": {
+        "verify": false
+      }
+    },
+    "ca.processors.herbledger.com": {
+      "url": "https://localhost:8054",
+      "caName": "ca-processors",
+      "httpOptions": {
+        "verify": false
+      }
+    },
+    "ca.labs.herbledger.com": {
+      "url": "https://localhost:9054",
+      "caName": "ca-labs",
+      "httpOptions": {
+        "verify": false
+      }
+    },
+    "ca.regulators.herbledger.com": {
+      "url": "https://localhost:10054",
+      "caName": "ca-regulators",
+      "httpOptions": {
+        "verify": false
+      }
+    }
+  }
+}
