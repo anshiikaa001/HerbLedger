@@ -10739,3 +10739,11 @@
 {"level":"info","message":"::1 - - [25/Mar/2026:05:23:59 +0000] \"GET /api/ai/sms/recent-data?limit=5 HTTP/1.1\" 304 - \"http://localhost:3002/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\"","service":"herbledger-api","timestamp":"2026-03-25T05:23:59.565Z"}
 {"level":"info","message":"::1 - - [25/Mar/2026:05:34:47 +0000] \"POST /api/ai/generate-zkp HTTP/1.1\" 200 976 \"http://localhost:3002/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\"","service":"herbledger-api","timestamp":"2026-03-25T05:34:47.788Z"}
 {"level":"info","message":"::1 - - [25/Mar/2026:07:02:10 +0000] \"POST /api/ai/verify-plant HTTP/1.1\" 200 166 \"http://localhost:3002/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\"","service":"herbledger-api","timestamp":"2026-03-25T07:02:10.229Z"}
+{"level":"info","message":"Starting HERBLEDGER Backend Server...","service":"herbledger-api","timestamp":"2026-05-17T05:53:51.211Z"}
+{"level":"info","message":"Database connection established","service":"herbledger-api","timestamp":"2026-05-17T05:53:51.722Z"}
+{"level":"info","message":"Redis connection established","service":"herbledger-api","timestamp":"2026-05-17T05:53:51.925Z"}
+{"level":"info","message":"Blockchain connection established","service":"herbledger-api","timestamp":"2026-05-17T05:53:55.945Z"}
+{"level":"info","message":"Server is running on port 3000","service":"herbledger-api","timestamp":"2026-05-17T05:53:55.951Z"}
+{"level":"info","message":"Environment: development","service":"herbledger-api","timestamp":"2026-05-17T05:53:55.951Z"}
+{"level":"info","message":"API Documentation: Disabled","service":"herbledger-api","timestamp":"2026-05-17T05:53:55.951Z"}
+{"level":"info","message":"Received SIGINT. Starting graceful shutdown...","service":"herbledger-api","timestamp":"2026-05-17T05:55:53.052Z"}
